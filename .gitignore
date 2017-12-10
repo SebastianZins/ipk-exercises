@@ -4,3 +4,12 @@
 build/
 #Sicherungsdateien 
 *~
+#PDF Dateien
+*.pdf
+#einzelne Dateien
+helloWorld
+1
+2
+3
+4
+
