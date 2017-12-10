@@ -1,1 +1,0 @@
-/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/uniform.dir/uniform.cc.o  -o uniform -rdynamic libstatistics.a 
