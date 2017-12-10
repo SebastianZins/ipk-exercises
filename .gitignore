@@ -1,0 +1,6 @@
+#alle Dateien, die auf -o enden
+*.o
+#das Unterverzeichnis /build
+build/
+#Sicherungsdateien 
+*~
