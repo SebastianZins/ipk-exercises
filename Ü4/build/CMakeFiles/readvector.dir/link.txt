@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/readvector.dir/readvector.cc.o  -o readvector -rdynamic libstatistics.a 

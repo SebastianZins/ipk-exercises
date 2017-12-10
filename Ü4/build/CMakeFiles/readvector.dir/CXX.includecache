@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sebastian/Schreibtisch/IPK/Ü4/io.hh
+vector
+-
+
+/home/sebastian/Schreibtisch/IPK/Ü4/readvector.cc
+iostream
+-
+io.hh
+/home/sebastian/Schreibtisch/IPK/Ü4/io.hh
+statistics.hh
+/home/sebastian/Schreibtisch/IPK/Ü4/statistics.hh
+
+/home/sebastian/Schreibtisch/IPK/Ü4/statistics.hh
+vector
+-
+

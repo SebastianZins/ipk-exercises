@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*#[ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sebastian/Schreibtisch/IPK/Ü5/checkparens.cc
+iostream
+-
+lint.hh
+/home/sebastian/Schreibtisch/IPK/Ü5/lint.hh
+input.hh
+/home/sebastian/Schreibtisch/IPK/Ü5/input.hh
+
+/home/sebastian/Schreibtisch/IPK/Ü5/input.hh
+string
+-
+istream
+-
+
+/home/sebastian/Schreibtisch/IPK/Ü5/lint.hh
+string
+-
+istream
+-
+

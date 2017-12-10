@@ -1,0 +1,1 @@
+/usr/bin/c++   -O3 -DNDEBUG   CMakeFiles/normal.dir/normal.cc.o  -o normal -rdynamic libstatistics.a 

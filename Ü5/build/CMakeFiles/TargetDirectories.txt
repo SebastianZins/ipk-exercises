@@ -1,0 +1,4 @@
+/home/sebastian/Schreibtisch/IPK/Ü5/build/CMakeFiles/edit_cache.dir
+/home/sebastian/Schreibtisch/IPK/Ü5/build/CMakeFiles/rebuild_cache.dir
+/home/sebastian/Schreibtisch/IPK/Ü5/build/CMakeFiles/checkparens.dir
+/home/sebastian/Schreibtisch/IPK/Ü5/build/CMakeFiles/input.dir
