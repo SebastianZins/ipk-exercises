@@ -8,7 +8,7 @@ private:
 public:
 	//constructor
 	Point();
-	Point(double newX, double newY);
+	Point(double x, double y);
 	//destructor
 	~Point();
 
@@ -19,7 +19,7 @@ public:
 	//setter
 	void setX(double newX);
 	void setY(double newY);
-	void setValues(double newX, double newY);
+	void setValues(double x, double y);
 	
 };
 

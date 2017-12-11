@@ -9,8 +9,9 @@ class Canvas{
 private:
 	const int horPixels, vertPixels;
 	const double height, width;
-	const Point center();
+	const Point middle;
 	std::vector<std::vector<int> > greyValues;
+
 public:
 	//constructor
 	Canvas(const Point& center, double width, double height,

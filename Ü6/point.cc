@@ -1,14 +1,14 @@
 #include "point.hh"
 
 //constructor
-Point::Point(){
-	x = 0;
-	y = 0;
-}
-Point::Point(double newX, double newY){
-	x = newX;
-	y = newY;
-}
+Point::Point()
+	: x (0)
+	, y (0)
+{}
+Point::Point(double x, double y)
+	: x (x)
+	, y (y)
+{}
 //destructor
 Point::~Point(){
 }

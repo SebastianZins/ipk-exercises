@@ -1,16 +1,14 @@
 #include "canvas.hh"
 #include "point.hh"
 
-//constructor
-
 Canvas::Canvas(const Point& center, double width, double height,
-	int horPixels, int vertPixels){
-		this->center().setValues(center.getX(), center.getY());
-		this->horPixels = horPixels;
-		this->vertPixels = vertPixels;
-		this->width = width;
-		this->height = height;
-	}
+int horPixels, int vertPixels)
+	: horPixels (horPixels)
+	, vertPixels (vertPixels)
+	, height (height)
+	, width (width)
+	, middle(center.getX(), center.getY())
+	{}
 //destructor
 Canvas::~Canvas(){
 

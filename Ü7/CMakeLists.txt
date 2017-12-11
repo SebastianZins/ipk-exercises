@@ -12,7 +12,6 @@ if(CMAKE_COMPILER_IS_GNUCXX)
 endif(CMAKE_COMPILER_IS_GNUCXX)
 
 
-
 # Erzeuge Bibliothek 
 add_library(lib canvas.cc point.cc)
 
