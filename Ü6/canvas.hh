@@ -9,7 +9,7 @@ class Canvas{
 private:
 	const int horPixels, vertPixels;
 	const double height, width;
-	const Point middle;
+	const Point center;
 	std::vector<std::vector<int> > greyValues;
 
 public:
@@ -18,7 +18,20 @@ public:
 	int horPixels, int vertPixels);
 	//destructor
 	~Canvas();
-	
+
+	//functions
+	//getter
+	double getCenterX();
+	double getCenterY();
+	double getWidth();
+	double getHeight();
+	double getHorPixels();
+	double getVertPixels();
+
+	//other
+	Point coord(int i, int j) const;
+
+	void write(const std::string& filename);
 };
 
 #endif //CANVAS_HH

@@ -2,7 +2,7 @@
 #define PGM_HH
 
 #include <vector>
-#include<string>
+#include <string>
 
 // reads a plain PGM image file from the given filename
 // returns all read grey values in a twodimensional int array
