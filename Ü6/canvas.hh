@@ -4,6 +4,8 @@
 #include <vector>
 
 #include "point.hh"
+#include "pgm.hh"
+
 
 class Canvas{
 private:
@@ -27,6 +29,7 @@ public:
 	double getHeight();
 	double getHorPixels();
 	double getVertPixels();
+	double getGreyValue(int x, int y);
 
 	//other
 	Point coord(int i, int j) const;

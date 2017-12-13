@@ -14,10 +14,12 @@ endif(CMAKE_COMPILER_IS_GNUCXX)
 
 
 # Erzeuge Bibliothek 
-add_library(lib canvas.cc point.cc)
+add_library(lib canvas.cc point.cc pgm.cc)
 
 # Ausführbares Programm ohne Quellen für Bibliothek
 add_executable(main main.cc)
+add_executable(plot plot.cc)
 
 # Programm gegen die Statistik-Bibliothek linken
 target_link_libraries(main lib)
+target_link_libraries(plot lib)

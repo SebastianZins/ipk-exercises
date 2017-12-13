@@ -1,7 +1,10 @@
 #include <iostream>
+#include <algorithm>
+#include <cmath>
 
 #include "canvas.hh"
 #include "point.hh"
+#include "pgm.hh"
 
 //constructor
 Canvas::Canvas(const Point& center, double width, double height,
@@ -11,7 +14,14 @@ int horPixels, int vertPixels)
 	, height (height)
 	, width (width)
 	, center(center.getX(), center.getY())
-	{}
+	, greyValues(horPixels, {vertPixels})
+	{
+		for(int x = 0; x < horPixels; x++){
+			for(int y = 0; y < vertPixels; y++){
+				greyValues[x][y] = std::max(0 , (int)(100 * sin(pow((double)x,-1.0)) * sin(pow((double)y,-1.0)) + 1));
+			}
+		}
+	}
 //destructor
 Canvas::~Canvas(){}
 
@@ -23,6 +33,8 @@ double Canvas::getWidth() {return width;}
 double Canvas::getHeight() {return height;}
 double Canvas::getHorPixels() {return horPixels;}
 double Canvas::getVertPixels() {return vertPixels;}
+double Canvas::getGreyValue(int x, int y){
+	return greyValues[x][y];}
 
 //other
 Point Canvas::coord(int i, int j) const{
@@ -34,9 +46,8 @@ Point Canvas::coord(int i, int j) const{
 
 	Point pixel((i + difPosX) *difX , (j + difPosY) *difY);
 
-	std::cout<<difX<<" "<<difPosX<<" "<<i<<" "<<center.getX()<<" "<<width<<std::endl;
 	return pixel;
 }
 void Canvas::write(const std::string& filename){
-
+	write_pgm(greyValues, filename);
 }
