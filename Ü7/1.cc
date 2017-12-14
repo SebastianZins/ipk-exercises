@@ -2,17 +2,17 @@
 #include <map>
 
 std::map<char,int> get_frequencies();
+void print_frequencies(const std::map<char,int>& freq);
 
 int main()
 {
-	std::map<char,int>temp = get_frequencies();
-	for(auto i:temp){std::cout<< i.first<<i.second<<std::endl;}
+	std::map<char,int>freq = get_frequencies();
+	print_frequencies(freq);
 	return 0;
 }
 
 std::map<char,int> get_frequencies(){
-	std::map<char,int> map;
-	int i  = 0;
+	std::map<char,int> charecter;
 	while (true){
 		unsigned char c;
 		// read in character
@@ -20,8 +20,18 @@ std::map<char,int> get_frequencies(){
 		// abort if input closed
 		if (not std::cin) {break;}
 		// work with c
-		map [c] = i;
-		i++;
+		if(charecter.count(c)>0){
+			charecter[c] ++;}
+		else{
+
+			charecter [c] = 1;
+		}
 	}
-	return map;
+	return charecter;
+}
+void print_frequencies(const std::map<char,int>& freq){
+	double totalCharacter = freq.size();
+	for(auto entry : freq){
+		std::cout<<"Frequencie of "<<entry.first<<" is "
+		<<(double)(entry.second / totalCharacter)<<"%"<<std::endl;}
 }
