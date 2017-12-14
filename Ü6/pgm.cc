@@ -1,5 +1,6 @@
 #include <fstream>
 #include <cmath>
+#include <string>
 
 #include "pgm.hh"
 
