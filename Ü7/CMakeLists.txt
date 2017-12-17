@@ -13,10 +13,13 @@ message("CMAKE_CXX_FLAGS is ${CMAKE_CXX_FLAGS}")
 
 
 # Erzeuge Bibliothek 
-#add_library(lib canvas.cc point.cc)
+add_library(lib sanitizeword.cc)
 
 # Ausführbares Programm ohne Quellen für Bibliothek
 add_executable(letterfrequencies letterfrequencies.cc)
+add_executable(wordfrequencies wordfrequencies.cc)
 
 # Programm gegen die Statistik-Bibliothek linken
-#target_link_libraries(main lib)
+target_link_libraries(letterfrequencies lib)
+target_link_libraries(wordfrequencies lib)
+
