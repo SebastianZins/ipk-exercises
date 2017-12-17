@@ -5105,3 +5105,8 @@ Ich will dann strafen oder Gnad erteilen,
 Denn nie verdarben Liebende noch so
 Wie diese: Julia und ihr Romeo.
 Alle ab.
+
+Frequency of a total of 3 character
+| A | 33.3333 % |
+| D | 33.3333 % |
+| S | 33.3333 % |

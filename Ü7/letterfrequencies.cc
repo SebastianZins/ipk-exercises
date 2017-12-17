@@ -12,20 +12,22 @@ int main(){
 
 std::map<char,int> get_frequencies(){
 	std::map<char,int> character;
+	unsigned char c; int i = 0;
 	while (true){
-		unsigned char c;
 		// read in character
 		std::cin >> c;
 		// abort if input closed
 		if (not std::cin) {break;}
+		c = std::toupper(c);
+		//std::cout << c << std::endl;
 		if(std::isalpha(c)){
-		if(character.count(c)>0){
-				character[std::toupper(c)] ++;}
-			else{
-
-				character [std::toupper(c)] = 1;
+			if(character[c]==0){
+				character[c] =1;
+			}else{
+				character [c] ++;
 			}
 		}
+		i++;
 	}
 	return character;
 }
@@ -37,6 +39,8 @@ void print_frequencies(const std::map<char,int>& freq){
 	for(auto& entry : freq){
 		frequency = ((double)entry.second / (double)size)*100;
 		std::cout<<"| "<<entry.first<<" | ";
-		std::cout.width(6);
-		std::cout<<frequency<<" % |"<<std::endl;}
+		std::cout.width(10);
+		std::cout<<frequency<<" % | ";
+		std::cout.width(8);
+		std::cout<<entry.second<<" |"<<std::endl;}
 }
