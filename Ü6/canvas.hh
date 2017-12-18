@@ -30,6 +30,7 @@ public:
 	double getHorPixels();
 	double getVertPixels();
 	double getGreyValue(int x, int y);
+	std::vector<std::vector<int> > getValues();
 
 	//other
 	Point coord(int i, int j) const;

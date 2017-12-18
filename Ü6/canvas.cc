@@ -13,15 +13,8 @@ int horPixels, int vertPixels)
 	, vertPixels (vertPixels)
 	, height (height)
 	, width (width)
-	, center(center.getX(), center.getY())
-	, greyValues(horPixels, {vertPixels})
-	{
-		for(int x = 0; x < horPixels; x++){
-			for(int y = 0; y < vertPixels; y++){
-				greyValues[x][y] = std::max(0 , (int)(100 * sin(pow((double)x,-1.0)) * sin(pow((double)y,-1.0)) + 1));
-			}
-		}
-	}
+    , center(horPixels,std::vector<int>(vertPixels))
+	{}
 //destructor
 Canvas::~Canvas(){}
 
@@ -35,18 +28,14 @@ double Canvas::getHorPixels() {return horPixels;}
 double Canvas::getVertPixels() {return vertPixels;}
 double Canvas::getGreyValue(int x, int y){
 	return greyValues[x][y];}
+std::vector<std::vector<int> > Canvas::getValues(){
+	return greyValues;}
 
 //other
 Point Canvas::coord(int i, int j) const{
-	int difPosX = (width/2 - center.getX()) * -1;
-	int difPosY = (height/2 - center.getY()) * -1;
-
-	double difX = width/horPixels;
-	double difY = height/vertPixels;
-
-	Point pixel((i + difPosX) *difX , (j + difPosY) *difY);
-
-	return pixel;
+	double x = (i - horPixels/2.)*width / horPixels;
+    double y = (j - vertPixels/2.)*height / vertPixels;
+    return {x + center.x(), y + center.y()};
 }
 void Canvas::write(const std::string& filename){
 	write_pgm(greyValues, filename);
