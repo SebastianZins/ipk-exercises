@@ -2,17 +2,32 @@
 #include <map>
 #include <cctype>
 
-std::map<char,int> get_frequencies_char();
-void print_frequencies_char(const std::map<char,int>& freq);
+#include "histogram.hh"
+
+std::map<char,int> get_frequencies();
+double print_frequencies(const std::map<char,int>& freq);
 
 //############################################
 int main(){
-	print_frequencies_char(get_frequencies_char());
+
+	int bins = 5; //number of bins
+
+	std::map<char,int> freq = get_frequencies();
+	print_frequencies(freq);
+
+	Histogram his = Histogram();
+
+	for(auto entry : freq){
+		his.insert(entry.second);
+	}
+
+	his.print_normalized(bins);
+
 	return 0;
 }
 //############################################
 
-std::map<char,int> get_frequencies_char(){
+std::map<char,int> get_frequencies(){
 	std::map<char,int> character;
 	unsigned char c; int i = 0;
 	while (true){
@@ -30,7 +45,7 @@ std::map<char,int> get_frequencies_char(){
 	}
 	return character;
 }
-void print_frequencies_char(const std::map<char,int>& freq){
+double print_frequencies(const std::map<char,int>& freq){
 	double frequency;
 	int size = 0;
 	for(auto& entry : freq){size += entry.second;}
@@ -42,4 +57,5 @@ void print_frequencies_char(const std::map<char,int>& freq){
 		std::cout<<frequency<<" % | ";
 		std::cout.width(8);
 		std::cout<<entry.second<<" |"<<std::endl;}
+	return frequency;
 }
