@@ -5,10 +5,13 @@
 #include "iteration_result.hh"
 
 int main(){
+	Point center = Point();
+	Canvas can = Canvas(center,2.0,2.0,200,200);
+
 	IterationResult it = IterationResult();
-	Point z = Point();
-	Point c = Point(5,2);
-	IterationResult temp = it.iterate(z,c,10,10);
-	std::cout<<temp.x()<<std::endl;
+
+	it.mandelbrot(can, 20, 20, "image.pgm");
+
+
 return 0;
 }
